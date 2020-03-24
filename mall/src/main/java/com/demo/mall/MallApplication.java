@@ -1,0 +1,19 @@
+package com.demo.mall;
+
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+@SpringBootApplication
+@ComponentScan({"com.demo.mall.controller", "com.demo.mall.service", "com.demo.mall.config"})
+@MapperScan("com.demo.mall.mapper")
+@EnableSwagger2
+public class MallApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(MallApplication.class, args);
+    }
+
+}

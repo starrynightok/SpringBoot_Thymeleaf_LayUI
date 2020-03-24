@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>计数器</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="layui-container">
+            <div style="padding: 20px;">
+                <div class="layui-row" style="text-align: center">
+                    <div class="layui-col-xs12 layui-col-md12" style="height: 30px;">
+                        <span class="layui-badge-dot"></span>
+                        <span style="margin: 0 10px;letter-spacing: 10px;">进出人员数</span>
+                    </div>
+                    <div class="layui-col-xs4" style="height: 40px;">
+                        <button class="layui-btn layui-btn-normal layui-layout-right" onclick="action('subtract', 1)">
+                            <i class="layui-icon layui-icon-subtraction"></i>
+                        </button>
+                    </div>
+                    <div class="layui-col-xs4">
+                        <label id="Num1" class="layui-form-label" style="height: 20px;text-align: center" th:text="${peopleCount}">
+                        </label>
+                    </div>
+                    <div class="layui-col-xs4" style="text-align: left">
+                        <button class="layui-btn layui-btn-normal" onclick="action('add', 1)">
+                            <i class="layui-icon layui-icon-addition"></i>
+                        </button>
+                    </div>
+                    <div class="layui-col-xs12">
+                        <hr class="layui-bg-green">
+                    </div>
+                </div>
+                <div class="layui-row" style="text-align: center">
+                    <div class="layui-col-xs12 layui-col-md12" style="height: 30px;">
+                        <span class="layui-badge-dot"></span>
+                        <span style="margin: 0 10px;letter-spacing: 10px;">车辆数</span>
+                    </div>
+                    <div class="layui-col-xs4" style="height: 40px;">
+                        <button class="layui-btn layui-btn-normal layui-layout-right" onclick="action('subtract', 2)">
+                            <i class="layui-icon layui-icon-subtraction"></i>
+                        </button>
+                    </div>
+                    <div class="layui-col-xs4">
+                        <label id="Num2" class="layui-form-label" style="height: 20px;text-align: center" th:text="${carCount}">
+                        </label>
+                    </div>
+                    <div class="layui-col-xs4" style="text-align: left">
+                        <button class="layui-btn layui-btn-normal" onclick="action('add', 2)">
+                            <i class="layui-icon layui-icon-addition"></i>
+                        </button>
+                    </div>
+                    <div class="layui-col-xs12">
+                        <hr class="layui-bg-green">
+                    </div>
+                </div>
+                <div class="layui-row" style="text-align: center">
+                    <div class="layui-col-xs12 layui-col-md12" style="height: 30px;">
+                        <span class="layui-badge-dot"></span>
+                        <span style="margin: 0 10px;letter-spacing: 10px;">劝返人数</span>
+                    </div>
+                    <div class="layui-col-xs4" style="height: 40px;">
+                        <button class="layui-btn layui-btn-normal layui-layout-right" onclick="action('subtract', 3)">
+                            <i class="layui-icon layui-icon-subtraction"></i>
+                        </button>
+                    </div>
+                    <div class="layui-col-xs4">
+                        <label id="Num3" class="layui-form-label" style="height: 20px;text-align: center" th:text="${backCount}">
+                        </label>
+                    </div>
+                    <div class="layui-col-xs4" style="text-align: left">
+                        <button class="layui-btn layui-btn-normal" onclick="action('add', 3)">
+                            <i class="layui-icon layui-icon-addition"></i>
+                        </button>
+                    </div>
+                    <div class="layui-col-xs12">
+                        <hr class="layui-bg-green">
+                    </div>
+                </div>
+                <div class="layui-row" style="text-align: center">
+                    <div class="layui-col-xs12 layui-col-md12" style="height: 30px;">
+                        <span class="layui-badge-dot"></span>
+                        <span style="margin: 0 10px;letter-spacing: 10px;">取快递人数</span>
+                    </div>
+                    <div class="layui-col-xs4" style="height: 40px;">
+                        <button class="layui-btn layui-btn-normal layui-layout-right" onclick="action('subtract', 4)">
+                            <i class="layui-icon layui-icon-subtraction"></i>
+                        </button>
+                    </div>
+                    <div class="layui-col-xs4">
+                        <label id="Num4" class="layui-form-label" style="height: 20px;text-align: center" th:text="${kuaidiCount}">
+                        </label>
+                    </div>
+                    <div class="layui-col-xs4" style="text-align: left">
+                        <button class="layui-btn layui-btn-normal" onclick="action('add', 4)">
+                            <i class="layui-icon layui-icon-addition"></i>
+                        </button>
+                    </div>
+                    <div class="layui-col-xs12">
+                        <hr class="layui-bg-green">
+                    </div>
+                </div>
+                <div class="layui-row" style="text-align: center">
+                    <div class="layui-col-xs12 layui-col-md12" style="height: 30px;">
+                        <span class="layui-badge-dot"></span>
+                        <span style="margin: 0 10px;letter-spacing: 10px;">团购人数</span>
+                    </div>
+                    <div class="layui-col-xs4" style="height: 40px;">
+                        <button class="layui-btn layui-btn-normal layui-layout-right" onclick="action('subtract', 5)">
+                            <i class="layui-icon layui-icon-subtraction"></i>
+                        </button>
+                    </div>
+                    <div class="layui-col-xs4">
+                        <label id="Num5" class="layui-form-label" style="height: 20px;text-align: center" th:text="${tuangouCount}">
+                        </label>
+                    </div>
+                    <div class="layui-col-xs4" style="text-align: left">
+                        <button class="layui-btn layui-btn-normal" onclick="action('add', 5)">
+                            <i class="layui-icon layui-icon-addition"></i>
+                        </button>
+                    </div>
+                    <div class="layui-col-xs12">
+                        <hr class="layui-bg-green">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <footer layout:fragment="footer">
+        <script th:src="@{../js/notes.js}"></script>
+    </footer>
+</body>
+</html>

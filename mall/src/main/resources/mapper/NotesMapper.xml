@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.mall.mapper.NotesMapper">
+    <resultMap id="result" type="com.demo.mall.entity.Notes">
+        <result property="id" column="ID"/>
+        <result property="type" column="TYPE"/>
+        <result property="createTime" column="CREATE_TIME"/>
+    </resultMap>
+
+    <select id="getNotes" resultMap="result">
+        select * from notes where id=#{id}
+    </select>
+
+    <update id="updateNotes">
+
+    </update>
+
+    <insert id="insertNotes">
+        insert notes(ID, TYPE, CREATE_TIME) values(#{id}, #{type}, #{createTime})
+    </insert>
+
+    <delete id="deleteNotes">
+        delete from notes where id=#{id}
+    </delete>
+
+    <select id="queryList" resultMap="result">
+        select ID, TYPE, CREATE_TIME from notes
+        where 1 = 1
+        <if test="type != null and type != ''">
+            and TYPE = ${type}
+        </if>
+        <if test="createTime != null">
+            and substring(CREATE_TIME, 1, 10) = substring(#{createTime}, 1, 10)
+        </if>
+        order by CREATE_TIME asc
+    </select>
+
+    <select id="getLastNotes" resultMap="result">
+        select ID, TYPE, CREATE_TIME from notes
+        where 1 = 1
+        <if test="type != null and type != ''">
+            and TYPE = ${type}
+        </if>
+        <if test="createTime != null">
+            and substring(CREATE_TIME, 1, 10) = substring(#{createTime}, 1, 10)
+        </if>
+        order by CREATE_TIME desc limit 1
+    </select>
+</mapper>

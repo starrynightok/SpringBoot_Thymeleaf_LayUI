@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<body>
+    <div th:fragment="header">
+        <div class="layui-header header header-doc">
+            <div class="layui-min">
+                <ul class="layui-nav">
+                    <li class="layui-nav-item layui-this"><a href="javascript:;" value="/" onclick="nextPage(this)">计数</a></li>
+                    <li class="layui-nav-item"><a href="javascript:;" value="/statistics" onclick="nextPage(this)">统计</a></li>
+                    <!--                <li class="layui-nav-item">-->
+                    <!--                    <a href="javascript:;">其它系统<span class="layui-nav-more"></span></a>-->
+                    <!--                    <dl class="layui-nav-child layui-anim layui-anim-upbit">-->
+                    <!--                        <dd><a href="">邮件管理</a></dd>-->
+                    <!--                        <dd><a href="">消息管理</a></dd>-->
+                    <!--                        <dd><a href="">授权管理</a></dd>-->
+                    <!--                    </dl>-->
+                    <!--                </li>-->
+                    <!--                    <span class="layui-nav-bar" style="width: 0px; left: 102px; opacity: 0; top: 55px;"></span>-->
+                </ul>
+                <ul class="layui-nav layui-layout-right">
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">
+                            <img src="//tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" class="layui-nav-img">
+                            User
+                            <!--                            <span class="layui-nav-more"></span>-->
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="">基本资料</a></dd>
+                            <dd><a href="">设置</a></dd>
+                            <dd><a href="">退出</a></dd>
+                        </dl>
+                    </li>
+                    <!--                <li class="layui-nav-item"><a href="">退出</a></li>-->
+                    <!--                    <span class="layui-nav-bar"></span>-->
+                </ul>
+            </div>
+            <!--            <div class="layui-logo">计数器</div>-->
+            <!-- 头部区域（可配合layui已有的水平导航） -->
+
+        </div>
+    </div>
+</body>
+</html>
